@@ -1,0 +1,10 @@
+---
+robots:
+- id: 15
+  name: Ervin
+  city: Schillermouth
+  state: Minnesota
+  created: '1912'
+  hired: '2008'
+  dept: Firefighter
+total: 15

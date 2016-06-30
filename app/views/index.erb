@@ -1,4 +1,6 @@
-  <h1>All Robots</h1>
+<br><br><br>
+<div class="well-dash text-center">
+  <h1><strong>All Robots</strong></h1>
 </div>
 
 <div class="container center">
@@ -6,7 +8,7 @@
   <% @robots.each do |robot|%>
 
 <div class="well-robot col-md-3">
-    <img class="col-md-offset-1 col-sm-10" src="https://robohash.org/<%= robot.id %>" alt="random robot pic">
+    <img class="col-md-offset-1 col-xs-10" src="https://robohash.org/<%= robot.id %>" alt="random robot pic">
     <h4 class=""><a href="/robots/<%= robot.id %>"><%= robot.name %></a></h4>
   <div class="row col-md-3"><a class="btn btn-primary btn-sm" href="/robots/<%= robot.id %>/edit">Edit</a>
   <form class="" action="/robots/<%= robot.id %>" method="post">

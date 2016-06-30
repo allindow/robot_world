@@ -31,15 +31,15 @@ class RobotWorld
   end
 
   def created(robot)
-    robot[:created].empty? ? rand(1900..2000).to_s : robot[:name]
+    robot[:created].empty? ? rand(1900..2000).to_s : robot[:created]
   end
 
   def hired(robot)
-    robot[:hired].empty? ? rand(2001..2016).to_s : robot[:name]
+    robot[:hired].empty? ? rand(2001..2016).to_s : robot[:hired]
   end
 
   def department(robot)
-    robot[:dept].empty? ? Faker::Company.profession.capitalize : robot[:dept]
+    robot[:dept].empty? ? Faker::Commerce.department : robot[:dept]
   end
 
   def create(robot)

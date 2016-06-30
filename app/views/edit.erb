@@ -1,22 +1,35 @@
-<form class="" action="/robots/<%= @robot.id %>" method="post">
-  <p>Edit Robot </p>
-  <input type="hidden" name="_method" value="PUT">
-  <ul>
-    <li>Robot Name</li>
-    <input type="text" name="robot[name]" value="<%= @robot.name %>">
-    <li>City</li>
-    <input type="text" name="robot[city]" value="<%= @robot.city %>">
-    <li>State</li>
-    <input type="text" name="robot[state]" value="<%= @robot.state %>">
-    <li>Year Created</li>
-    <input type="text" name="robot[created]" value="<%= @robot.created %>">
-    <li>Year Hired</li>
-    <input type="text" name="robot[hired]" value="<%= @robot.hired %>">
-    <li>Department</li>
-    <input type="text" name="robot[dept]" value="<%= @robot.dept %>">
- </ul>
+<br><br><br>
+<div class="well-dash text-center">
+  <p><strong>Edit Robot</strong></p>
+</div>
 
- <input type="submit">
+<div class="container col-md-offset-2">
+  <div class="well-robot col-md-10">
+<form class="form-group" action="/robots/<%= @robot.id %>" method="post">
+<input type="hidden" name="_method" value="PUT">
+
+
+<label for="robotname">Robot Name</label>
+<input type="text" class="form-control" id="robotname" name="robot[name]" value="<%= @robot.name %>">
+<br>
+<label for="robotcity">City Robot Is From</label>
+<input type="text" class="form-control" id="robotcity" name="robot[city]" value="<%= @robot.city %>">
+<br>
+<label for="robotstate">State Robot Is From</label>
+<input type="text" class="form-control" id="robotstate" name="robot[state]" value="<%= @robot.state %>">
+<br>
+<label for="robotcreated">Year Robot Was Created</label>
+<input type="text" class="form-control" id="robotcreated" name="robot[created]" value="<%= @robot.created %>">
+<br>
+<label for="robothired">Year Robot Was Hired</label>
+<input type="text" class="form-control" id="robothired" name="robot[hired]" value="<%= @robot.hired %>">
+<br>
+<label for="robotdept">Department Robot Works In</label>
+<input type="text" class="form-control" id="robotdept" name="robot[dept]" value="<%= @robot.dept %>">
+
+<button class="btn btn-success" type= "submit">Change My Robot!</button>
 
 
 </form>
+</div>
+</div>

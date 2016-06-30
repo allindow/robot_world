@@ -1090,7 +1090,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Courier,"Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -2521,6 +2521,7 @@ label {
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: bold;
+  font-size: 20px;
 }
 input[type="search"] {
   -webkit-box-sizing: border-box;
@@ -4177,6 +4178,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-top-right-radius: 0;
 }
 .navbar {
+  font-size: 30px;
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
@@ -4508,6 +4510,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default {
   background-color: rgba(245, 245, 245, 0.9);
   border-color: #e7e7e7;
+  font-size: 20px;
+  font-weight: bold;
 }
 .navbar-default .navbar-brand {
   color: #777;
@@ -4521,7 +4525,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #777;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #777;
+  color: black;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -4583,7 +4587,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default .navbar-link {
-  color: #777;
+  color: black;
 }
 .navbar-default .navbar-link:hover {
   color: #333;

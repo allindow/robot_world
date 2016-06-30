@@ -1,19 +1,29 @@
-<h2>Robot Generator</h2>
-<form class="" action="/robots" method="post">
-  <h3>Customize your robot, or leave fields blank to randomly generate!</h3>
-  <ul>
-    <li>Robot Name</li>
-    <input type="text" name="robot[name]">
-    <li>City</li>
-    <input type="text" name="robot[city]">
-    <li>State</li>
-    <input type="text" name="robot[state]">
-    <li>Year Created</li>
-    <input type="text" name="robot[created]" placeholder="format: 1987">
-    <li>Year Hired</li>
-    <input type="text" name="robot[hired]" placeholder="format: 2007">
-    <li>Department</li>
-    <input type="text" name="robot[dept]">
- </ul>
- <input type= "submit">
+<h1>Robot Generator</h1>
+<h3>Customize your robot or leave field(s) blank to randomly generate!</h3>
+</div>
+
+<div class="container col-md-offset-2">
+  <div class="well-robot col-md-10">
+<form class="form-group" action="/robots" method="post">
+      <label for="robotname">Robot Name</label>
+    <input type="text" class="form-control" id="robotname" placeholder="ex: Henrietta" name="robot[name]">
+    <br>
+    <label for="robotcity">City Robot Is From</label>
+  <input type="text" class="form-control" id="robotcity" placeholder="ex: Denver" name="robot[city]">
+  <br>
+  <label for="robotstate">State Robot Is From</label>
+<input type="text" class="form-control" id="robotstate" name="robot[state]">
+<br>
+<label for="robotcreated">Year Robot Was Created</label>
+<input type="text" class="form-control" id="robotcreated" name="robot[created]">
+<br>
+<label for="robothired">Year Robot Was Hired</label>
+<input type="text" class="form-control" id="robothired" name="robot[hired]">
+<br>
+<label for="robotdept">Department Robot Works In</label>
+<input type="text" class="form-control" id="robotdept" name="robot[dept]">
+ <br>
+ <button class="btn btn-success" type= "submit">Make My Robot!</button>
 </form>
+</div>
+</div>

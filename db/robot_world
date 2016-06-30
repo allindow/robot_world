@@ -7,4 +7,32 @@ robots:
   created: '1912'
   hired: '2008'
   dept: Firefighter
-total: 15
+- id: 16
+  name: Cristina
+  city: Ardenview
+  state: New Hampshire
+  created: '1920'
+  hired: '2004'
+  dept: Doctor
+- id: 17
+  name: Drew
+  city: Armstrongside
+  state: South Carolina
+  created: '1958'
+  hired: '2013'
+  dept: Advocate
+- id: 18
+  name: Krystal
+  city: Port Kieranhaven
+  state: Indiana
+  created: '1973'
+  hired: '2016'
+  dept: Writer
+- id: 19
+  name: Norberto
+  city: Port Maritza
+  state: Maine
+  created: '1967'
+  hired: '2014'
+  dept: Human resources
+total: 19

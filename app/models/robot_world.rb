@@ -1,5 +1,4 @@
 require 'yaml/store'
-require './app/models/robot'
 
 class RobotWorld
   attr_reader :database
@@ -77,4 +76,10 @@ class RobotWorld
     end
   end
 
+  def delete_all
+    database.transaction do
+      database["robots"] = []
+      database["total"] = 0
+    end
+  end
 end

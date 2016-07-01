@@ -7,4 +7,9 @@ gem 'minitest'
 gem 'pry'
 gem 'capybara'
 gem 'launchy'
-gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end

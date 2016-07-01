@@ -1,3 +1,5 @@
+require 'sqlite3'
+
 class RobotWorldApp < Sinatra::Base
   set :root, File.expand_path("..", __dir__)
   set :method_override, true
@@ -42,10 +44,11 @@ class RobotWorldApp < Sinatra::Base
 
   def robot_world
     if ENV['RACK_ENV'] == "test"
-      database = YAML::Store.new('db/robot_world_test')
+      database = SQLite3::Database.new('db/robot_world_test.db')
     else
-      database = YAML::Store.new('db/robot_world')
+      database = SQLite3::Database.new('db/robot_world_development.db')
     end
+    database.results_as_hash = true
     @robot_world ||= RobotWorld.new(database)
   end
 

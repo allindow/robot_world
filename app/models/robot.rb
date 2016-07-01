@@ -1,5 +1,5 @@
-require 'rubygems'
-require 'faker'
+# require 'rubygems'
+# require 'faker'
 
 class Robot
 attr_reader :name, :city, :state, :created, :hired, :dept, :id
@@ -8,10 +8,10 @@ attr_reader :name, :city, :state, :created, :hired, :dept, :id
     @name      = data["name"]
     @city      = data["city"]
     @state     = data["state"]
-    @created = data["created"]
+    @created   = data["created"]
     @hired     = data["hired"]
     @dept      = data["dept"]
-    @id      = data["id"]
+    @id        = data["id"]
   end
 
   def age

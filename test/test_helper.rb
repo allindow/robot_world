@@ -6,11 +6,13 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'capybara/dsl'
 require 'launchy'
+require 'sqlite3'
 
 module TestHelpers
   #create the test database
   def robot_world
-    database = YAML::Store.new('db/robot_world_test')
+    database = SQLite3::Database.new('db/robot_world_test.db')
+    database.results_as_hash = true
     @database ||= RobotWorld.new(database)
   end
 

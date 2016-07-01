@@ -4,6 +4,7 @@ gem 'sinatra', require: 'sinatra/base'
 gem 'shotgun'
 gem 'faker'
 gem 'minitest'
-gem "pry"
-gem "capybara"
-gem "launchy"
+gem 'pry'
+gem 'capybara'
+gem 'launchy'
+gem 'sqlite3'

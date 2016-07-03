@@ -73,13 +73,14 @@ class RobotWorld
                       hired = ?,
                       dept = ?
                       WHERE id = ?;",
-                      robot[:name],
-                      robot[:city],
-                      robot[:state],
-                      robot[:created],
-                      robot[:hired],
-                      robot[:dept],
-                      id)
+                      name(robot),
+                      city(robot),
+                      state(robot),
+                      created(robot),
+                      hired(robot),
+                      dept(robot),
+                      id
+                      )
   end
 
   def destroy(id)

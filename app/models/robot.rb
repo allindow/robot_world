@@ -1,5 +1,5 @@
-# require 'rubygems'
-# require 'faker'
+require 'rubygems'
+require 'faker'
 
 class Robot
 attr_reader :name, :city, :state, :created, :hired, :dept, :id
@@ -18,9 +18,5 @@ attr_reader :name, :city, :state, :created, :hired, :dept, :id
     now = Time.now.utc.to_date
     now.year - created.to_i
   end
-
-  # def random_name
-  #   Faker::Name.name
-  # end
 
 end

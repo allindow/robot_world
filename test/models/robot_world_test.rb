@@ -57,4 +57,34 @@ class RobotWorldTest < Minitest::Test
     assert_equal 1, robot_world.all.count
     assert_equal "Gus", robot_world.all.first.name
   end
+
+  def test_it_can_get_average_robot_age
+    robot1_data = {:name => "Archy", :city => "Yigo", :state => "Guam", :created => "2001", :hired => "2015", :dept => "Horticulture"}
+    robot2_data = {:name => "Gus", :city => "New Market", :state => "TN", :created => "2016", :hired => "2016", :dept => "Dairy"}
+    robot_world.create(robot1_data)
+    robot_world.create(robot2_data)
+    assert_equal 7, robot_world.average_age
+  end
+
+  def test_it_can_generate_data_for_empty_fields
+    robot_data = {:name => "", :city => "", :state => "TN", :created => "2005", :hired => "2010", :dept => "Horticulture"}
+    robot_world.create(robot_data)
+    refute robot_world.all.first.name == ""
+    refute robot_world.all.first.city == ""
+  end
+
+  def test_it_can_get_data_by_column
+    robot1_data = {:name => "Archy", :city => "Yigo", :state => "Jamaica", :created => "2001", :hired => "2015", :dept => "Horticulture"}
+    robot2_data = {:name => "Gus", :city => "Yigo", :state => "Guam", :created => "2016", :hired => "2016", :dept => "Dairy"}
+    robot_world.create(robot1_data)
+    robot_world.create(robot2_data)
+    robot_world.count_selection("city").map do |set|
+      assert_equal 2, set["COUNT(city)"]
+      assert_equal "Yigo", set["city"]
+    end
+    robot_world.count_selection("state").map do |set|
+      assert_equal 1, set["COUNT(state)"]
+    end
+  end
+
 end

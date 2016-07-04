@@ -19,20 +19,8 @@ class RobotWorld
     end.inject(:+)/robot_count
   end
 
-  def hired_by_year
-    database.execute("SELECT hired, COUNT(hired) FROM robots GROUP BY hired;")
-  end
-
-  def per_dept
-    database.execute("SELECT dept, COUNT(dept) FROM robots GROUP BY dept;")
-  end
-
-  def per_city
-    database.execute("SELECT city, COUNT(city) FROM robots GROUP BY city;")
-  end
-
-  def per_state
-    database.execute("SELECT state, COUNT(state) FROM robots GROUP BY state")
+  def count_selection(column)
+    database.execute("SELECT #{column}, COUNT(#{column}) FROM robots GROUP BY #{column};")
   end
 
   def all

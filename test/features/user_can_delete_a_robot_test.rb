@@ -1,7 +1,7 @@
 require_relative "../test_helper"
 
-class UserCanCreateARobotTest < FeatureTest
-  def test_user_can_edit_a_robot
+class UserCanDeleteARobotTest < FeatureTest
+  def test_user_can_delete_a_robot
     visit "/"
     click_link "Create a Robot"
     assert_equal "/robots/new", current_path

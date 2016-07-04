@@ -24,7 +24,7 @@ class RobotWorldApp < Sinatra::Base
 
   get '/robots/:id' do |id|
     @robot = robot_world.find(id.to_i)
-    erb :index
+    erb :show
   end
 
   get '/robots/:id/edit' do |id|

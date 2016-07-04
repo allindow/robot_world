@@ -1,6 +1,6 @@
 require_relative "../test_helper"
 
-class UserCanCreateARobotTest < FeatureTest
+class UserCanEditARobotTest < FeatureTest
   def test_user_can_edit_a_robot
     visit "/"
     click_link "Create a Robot"

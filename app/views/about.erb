@@ -7,75 +7,75 @@
 <div class="row well-robot col-md-10">
 
     <br>
-    <ul><h3>
-    <li><p>Number of Robots in Robot World: <%= @robots.all.count %></li><br>
-    <li><p>Average Age of Robots in Robot World:  <%= @robots.average_age %></p></li>
-    <br>
-    <li><p>Breakdown of Number of Robots Hired Per Year:<br>
-        <div class="col-md-offset-2">
-          <table class= "table table-bordered" style="width:70%">
-        <tr class="text-center">
-          <th class="col-md-3 text-center">Year</th>
-          <th class="col-md-3">Robots Hired</th>
-        </tr>
-      <% @robots.count_selection("hired").map do |set| %>
-      <tr class="text-center">
-        <td><%=set["hired"] %></td>
-        <td><%=set["COUNT(hired)"] %></td>
-      </tr>
-      <% end %>
-    </table>
-  </li>
-  <li><p>Number of Robots in Each Department:<br>
-      <div class="col-md-offset-1">
-        <table class= "table table-bordered" style="width:90%">
-      <tr class="text-center">
-        <th class="col-md-4 text-center">Departments</th>
-        <th class="col-md-4 text-center">Robots Employed</th>
-      </tr>
-    <% @robots.count_selection("dept").map do |set| %>
-    <tr class="text-center">
-      <td><%=set["dept"] %></td>
-      <td><%=set["COUNT(dept)"] %></td>
-    </tr>
-    <% end %>
-  </table>
-  <li><p>Number of Robots in Each State<br>
-    <div class="col-md-offset-1">
-      <table class= "table table-bordered" style="width:90%">
-        <tr class="text-center">
-          <th class="col-md-4 text-center">State</th>
-          <th class="col-md-4 text-center">Robot Residents</th>
-        </tr>
-        <% @robots.count_selection("state").map do |set| %>
-        <tr class="text-center">
-          <td><%=set["state"] %></td>
-          <td><%=set["COUNT(state)"] %></td>
-        </tr>
-        <% end %>
-      </table>
-    </li>
-</li><li><p>Number of Robots In Each City:<br>
-    <div class="col-md-offset-1">
-      <table class= "table table-bordered" style="width:90%">
-    <tr class="text-center">
-      <th class="col-md-4 text-center">City</th>
-      <th class="col-md-4 text-center">Robot Residents</th>
-    </tr>
-  <% @robots.count_selection("city").map do |set| %>
-  <tr class="text-center">
-    <td><%=set["city"] %></td>
-    <td><%=set["COUNT(city)"] %></td>
-  </tr>
-  <% end %>
-</table>
-</li>
-  </div>
-    </h3></p>
-
-
-
-
+    <% if @robots.database.execute("SELECT name FROM robots;").empty? %>
+    <h2 class="text-center">There are no robots in Robot World. <a href="/create">Create Some!</a></h2>
+    <% else %>
+       <ul id="robot_stats"><h3>
+       <li><p>Number of Robots in Robot World: <%= @robots.all.count %></li><br>
+       <li><p>Average Age of Robots in Robot World:  <%= @robots.average_age %></p></li>
+       <br>
+       <li><p>Breakdown of Number of Robots Hired Per Year:<br>
+           <div class="col-md-offset-2">
+             <table class= "table table-bordered" style="width:70%">
+           <tr class="text-center">
+             <th class="col-md-3 text-center">Year</th>
+             <th class="col-md-3">Robots Hired</th>
+           </tr>
+         <% @robots.count_selection("hired").map do |set| %>
+         <tr class="text-center">
+           <td><%=set["hired"] %></td>
+           <td><%=set["COUNT(hired)"] %></td>
+         </tr>
+         <% end %>
+       </table>
+     </li>
+     <li><p>Number of Robots in Each Department:<br>
+         <div class="col-md-offset-1">
+           <table class= "table table-bordered" style="width:90%">
+         <tr class="text-center">
+           <th class="col-md-4 text-center">Departments</th>
+           <th class="col-md-4 text-center">Robots Employed</th>
+         </tr>
+       <% @robots.count_selection("dept").map do |set| %>
+       <tr class="text-center">
+         <td><%=set["dept"] %></td>
+         <td><%=set["COUNT(dept)"] %></td>
+       </tr>
+       <% end %>
+     </table>
+     <li><p>Number of Robots in Each State<br>
+       <div class="col-md-offset-1">
+         <table class= "table table-bordered" style="width:90%">
+           <tr class="text-center">
+             <th class="col-md-4 text-center">State</th>
+             <th class="col-md-4 text-center">Robot Residents</th>
+           </tr>
+           <% @robots.count_selection("state").map do |set| %>
+           <tr class="text-center">
+             <td><%=set["state"] %></td>
+             <td><%=set["COUNT(state)"] %></td>
+           </tr>
+           <% end %>
+         </table>
+       </li>
+   </li><li><p>Number of Robots In Each City:<br>
+       <div class="col-md-offset-1">
+         <table class= "table table-bordered" style="width:90%">
+       <tr class="text-center">
+         <th class="col-md-4 text-center">City</th>
+         <th class="col-md-4 text-center">Robot Residents</th>
+       </tr>
+     <% @robots.count_selection("city").map do |set| %>
+     <tr class="text-center">
+       <td><%=set["city"] %></td>
+       <td><%=set["COUNT(city)"] %></td>
+     </tr>
+     <% end %>
+   </table>
+   </li>
+     </div></ul>
+       </h3></p>
+       <% end %>
 </div>
 
 </div>

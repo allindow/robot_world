@@ -20,9 +20,20 @@ class RobotWorld
   end
 
   def hired_by_year
-    database.execute("SELECT hired, COUNT(hired) FROM robots GROUP BY hired")
+    database.execute("SELECT hired, COUNT(hired) FROM robots GROUP BY hired;")
   end
 
+  def per_dept
+    database.execute("SELECT dept, COUNT(dept) FROM robots GROUP BY dept;")
+  end
+
+  def per_city
+    database.execute("SELECT city, COUNT(city) FROM robots GROUP BY city;")
+  end
+
+  def per_state
+    database.execute("SELECT state, COUNT(state) FROM robots GROUP BY state")
+  end
 
   def all
     robot_data.map { |data| Robot.new(data) }
@@ -49,7 +60,7 @@ class RobotWorld
   end
 
   def dept(robot)
-    robot[:dept].empty? ? Faker::Commerce.department : robot[:dept]
+    robot[:dept].empty? ? Faker::Commerce.department(1) : robot[:dept]
   end
 
   def create(robot)

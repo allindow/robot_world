@@ -24,8 +24,51 @@
         <td><%=set["COUNT(hired)"] %></td>
       </tr>
       <% end %>
+    </table>
+  </li>
+  <li><p>Number of Robots in Each Department:<br>
+      <div class="col-md-offset-1">
+        <table class= "table table-bordered" style="width:90%">
+      <tr class="text-center">
+        <th class="col-md-4 text-center">Departments</th>
+        <th class="col-md-4 text-center">Robots Employed</th>
       </tr>
-    </table></li>
+    <% @robots.per_dept.map do |set| %>
+    <tr class="text-center">
+      <td><%=set["dept"] %></td>
+      <td><%=set["COUNT(dept)"] %></td>
+    </tr>
+    <% end %>
+  </table>
+</li><li><p>Number of Robots In Each City:<br>
+    <div class="col-md-offset-1">
+      <table class= "table table-bordered" style="width:90%">
+    <tr class="text-center">
+      <th class="col-md-4 text-center">City</th>
+      <th class="col-md-4 text-center">Robot Residents</th>
+    </tr>
+  <% @robots.per_city.map do |set| %>
+  <tr class="text-center">
+    <td><%=set["city"] %></td>
+    <td><%=set["COUNT(city)"] %></td>
+  </tr>
+  <% end %>
+</table>
+</li><li><p>Number of Robots in Each State<br>
+    <div class="col-md-offset-1">
+      <table class= "table table-bordered" style="width:90%">
+    <tr class="text-center">
+      <th class="col-md-4 text-center">State</th>
+      <th class="col-md-4 text-center">Robot Residents</th>
+    </tr>
+  <% @robots.per_state.map do |set| %>
+  <tr class="text-center">
+    <td><%=set["state"] %></td>
+    <td><%=set["COUNT(state)"] %></td>
+  </tr>
+  <% end %>
+</table>
+</li>
   </div>
     </h3></p>
 

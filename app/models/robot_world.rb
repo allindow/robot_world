@@ -9,6 +9,21 @@ class RobotWorld
     database.execute("SELECT * FROM robots;")
   end
 
+  def robot_count
+    robot_data.count
+  end
+
+  def average_age
+    all.map do |robot|
+      robot.age
+    end.inject(:+)/robot_count
+  end
+
+  def hired_by_year
+    database.execute("SELECT hired, COUNT(hired) FROM robots GROUP BY hired")
+  end
+
+
   def all
     robot_data.map { |data| Robot.new(data) }
   end

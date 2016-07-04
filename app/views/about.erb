@@ -1,0 +1,37 @@
+<br><br><br>
+<div class="well-dash text-center">
+  <h1><strong>About the Robots in Robot World...</strong></h1>
+</div>
+<div class="container col-md-offset-2">
+
+<div class="row well-robot col-md-10">
+
+    <br>
+    <ul><h3>
+    <li><p>Number of Robots in Robot World: <%= @robots.all.count %></li><br>
+    <li><p>Average Age of Robots in Robot World:  <%= @robots.average_age %></p></li>
+    <br>
+    <li><p>Breakdown of Number of Robots Hired Per Year:<br>
+        <div class="col-md-offset-2">
+          <table class= "table table-bordered" style="width:70%">
+        <tr class="text-center">
+          <th class="col-md-3 text-center">Year</th>
+          <th class="col-md-3">Robots Hired</th>
+        </tr>
+      <% @robots.hired_by_year.map do |set| %>
+      <tr class="text-center">
+        <td><%=set["hired"] %></td>
+        <td><%=set["COUNT(hired)"] %></td>
+      </tr>
+      <% end %>
+      </tr>
+    </table></li>
+  </div>
+    </h3></p>
+
+
+
+
+</div>
+
+</div>

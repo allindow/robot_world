@@ -99,9 +99,6 @@ class RobotWorld
 
   def destroy(id)
     database.execute("DELETE FROM robots WHERE id = ?;", id)
-    # database.transaction do
-    #   database['robots'].delete_if {|robot| robot["id"] == id}
-    # end
   end
 
   def delete_all

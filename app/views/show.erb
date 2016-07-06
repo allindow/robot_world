@@ -1,4 +1,23 @@
-<img src="https://robohash.org/<%= @robot.id %>">
-<h2>This is <%= @robot.name %>!</h2>
-<p><%= @robot.name %> is from <%= @robot.city %>, <%= @robot.state %> and is <%= @robot.age %> years old.<p>
-<p>They have been working in the <%= @robot.dept %> Department since <%= @robot.hired %>.
+<br><br><br>
+<div class="well-dash text-center">
+  <h1><strong>This is <%= @robot.name %>!</strong></h1>
+</div>
+<div class="container col-md-offset-2">
+
+<div class="row well-robot col-md-10">
+
+  <div class="col-md-6">
+    <img src="https://robohash.org/<%= @robot.id %>" alt="robot pic" class="center-block">
+  </div>
+  <div class="col-md-6">
+    <br>
+    <p><h3><%= @robot.name %> is from <%= @robot.city %>, <%= @robot.state %> and is <%= @robot.age %> years old.<p>
+    <p>They have been working in the <%= @robot.dept %> Department since <%= @robot.hired %>.</h3>
+      <br>
+      <a class="btn btn-primary" href="/robots/<%= @robot.id %>/edit">Edit <%=@robot.name%>'s Information</a>
+ </div>
+
+
+</div>
+
+</div>

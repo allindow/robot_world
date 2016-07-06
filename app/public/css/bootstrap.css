@@ -10,8 +10,15 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
+  background: url("downloads/futurama.jpg") no-repeat;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
   margin: 0;
 }
+
+
 article,
 aside,
 details,
@@ -62,6 +69,7 @@ dfn {
 h1 {
   margin: .67em 0;
   font-size: 2em;
+
 }
 mark {
   color: #000;
@@ -1082,7 +1090,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Courier,"Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -1619,6 +1627,8 @@ pre code {
   padding-right: 15px;
   padding-left: 15px;
 }
+
+
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
 }
@@ -2085,7 +2095,7 @@ pre code {
     margin-left: 16.66666667%;
   }
   .col-md-offset-1 {
-    margin-left: 8.33333333%;
+    margin-left: 10px;
   }
   .col-md-offset-0 {
     margin-left: 0;
@@ -2511,6 +2521,7 @@ label {
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: bold;
+  font-size: 20px;
 }
 input[type="search"] {
   -webkit-box-sizing: border-box;
@@ -4167,6 +4178,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-top-right-radius: 0;
 }
 .navbar {
+  font-size: 30px;
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
@@ -4496,8 +4508,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
+  background-color: rgba(245, 245, 245, 0.9);
   border-color: #e7e7e7;
+  font-size: 20px;
+  font-weight: bold;
 }
 .navbar-default .navbar-brand {
   color: #777;
@@ -4511,7 +4525,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #777;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #777;
+  color: black;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -4573,7 +4587,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default .navbar-link {
-  color: #777;
+  color: black;
 }
 .navbar-default .navbar-link:hover {
   color: #333;
@@ -5818,6 +5832,27 @@ button.list-group-item-danger.active:focus {
 }
 .embed-responsive-4by3 {
   padding-bottom: 75%;
+}
+.well-dash {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: rgba(245, 245, 245, 0.9);
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+.well-robot {
+  min-height: 20px;
+  padding: 19px;
+  margin: 10px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.87);
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
 }
 .well {
   min-height: 20px;

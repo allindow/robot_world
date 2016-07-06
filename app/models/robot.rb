@@ -8,10 +8,10 @@ attr_reader :name, :city, :state, :created, :hired, :dept, :id
     @name      = data["name"]
     @city      = data["city"]
     @state     = data["state"]
-    @created = data["created"]
+    @created   = data["created"]
     @hired     = data["hired"]
     @dept      = data["dept"]
-    @id      = data["id"]
+    @id        = data["id"]
   end
 
   def age
@@ -19,8 +19,4 @@ attr_reader :name, :city, :state, :created, :hired, :dept, :id
     now.year - created.to_i
   end
 
-  def random_name
-    Faker::Name.name
-  end
-  
 end
